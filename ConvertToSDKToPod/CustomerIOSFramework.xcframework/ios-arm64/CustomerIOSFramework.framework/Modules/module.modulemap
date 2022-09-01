@@ -1,0 +1,11 @@
+framework module CustomerIOSFramework {
+  umbrella header "CustomerIOSFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module CustomerIOSFramework.Swift {
+    header "CustomerIOSFramework-Swift.h"
+    requires objc
+}

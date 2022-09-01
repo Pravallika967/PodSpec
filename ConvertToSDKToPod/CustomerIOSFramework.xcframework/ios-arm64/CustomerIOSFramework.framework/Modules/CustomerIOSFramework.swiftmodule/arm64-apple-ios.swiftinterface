@@ -1,0 +1,637 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios15.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CustomerIOSFramework
+import CommonCrypto
+import CoreGraphics
+import CoreLocation
+import CryptoKit
+@_exported import CustomerIOSFramework
+import Foundation
+import ImageIO
+import PDFKit
+import Photos
+import PhotosUI
+import Security
+import Swift
+import SystemConfiguration
+import UIKit.UIGestureRecognizerSubclass
+import UIKit
+import _Concurrency
+public enum RobotoScaledFontStyle {
+  case header
+  case description
+  case body
+  case action
+  case sectionHeader
+  case visitTitle
+  public static func == (a: CustomerIOSFramework.RobotoScaledFontStyle, b: CustomerIOSFramework.RobotoScaledFontStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum RobotoTextType {
+  case Bold
+  case Light
+  case Regular
+  case Semibold
+  case Medium
+  public static func == (a: CustomerIOSFramework.RobotoTextType, b: CustomerIOSFramework.RobotoTextType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Card91Type {
+  case Bold
+  case Light
+  case Regular
+  case Semibold
+  case Medium
+  public static func == (a: CustomerIOSFramework.Card91Type, b: CustomerIOSFramework.Card91Type) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension UIKit.UIFont {
+  public func jbs_registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
+}
+@_hasMissingDesignatedInitializers public class ScalledFont {
+  public static func fontFromStyle(style: CustomerIOSFramework.ScaledFontStyle) -> UIKit.UIFont
+  @objc deinit
+}
+public struct Styles {
+  public struct BodyBold {
+    public static let primaryColor: UIKit.UIColor
+    public static let inverseColor: UIKit.UIColor
+  }
+  public struct Header {
+    public static let primaryColor: UIKit.UIColor
+    public static let secondaryColor: UIKit.UIColor
+    public static let inverseColor: UIKit.UIColor
+  }
+  public struct Description {
+    public static let primaryColor: UIKit.UIColor
+    public static let inverseColor: UIKit.UIColor
+  }
+  public struct visitTitle {
+    public static let primaryColor: UIKit.UIColor
+    public static let inverseColor: UIKit.UIColor
+  }
+  public static func defaultColorFor(style: CustomerIOSFramework.ScaledFontStyle) -> UIKit.UIColor
+}
+public enum ScaledFontStyle {
+  case header
+  case description
+  case body
+  case action
+  case sectionHeader
+  case visitTitle
+  public static func == (a: CustomerIOSFramework.ScaledFontStyle, b: CustomerIOSFramework.ScaledFontStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum SFProTextType {
+  case Bold
+  case Light
+  case Regular
+  case Semibold
+  case Medium
+  public static func == (a: CustomerIOSFramework.SFProTextType, b: CustomerIOSFramework.SFProTextType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct SheetOptions {
+  public static var `default`: CustomerIOSFramework.SheetOptions
+  public enum TransitionOverflowType {
+    case color(color: UIKit.UIColor)
+    case view(view: UIKit.UIView)
+    case none
+    case automatic
+  }
+  public var pullBarHeight: CoreGraphics.CGFloat
+  public var presentingViewCornerRadius: CoreGraphics.CGFloat
+  public var shouldExtendBackground: Swift.Bool
+  public var setIntrinsicHeightOnNavigationControllers: Swift.Bool
+  public var transitionAnimationOptions: UIKit.UIView.AnimationOptions
+  public var transitionDampening: CoreGraphics.CGFloat
+  public var transitionDuration: Swift.Double
+  public var transitionVelocity: CoreGraphics.CGFloat
+  public var transitionOverflowType: CustomerIOSFramework.SheetOptions.TransitionOverflowType
+  public var pullDismissThreshod: CoreGraphics.CGFloat
+  public var useFullScreenMode: Swift.Bool
+  public var shrinkPresentingViewController: Swift.Bool
+  public var useInlineMode: Swift.Bool
+  public var horizontalPadding: CoreGraphics.CGFloat
+  public var maxWidth: CoreGraphics.CGFloat?
+  @available(*, unavailable, message: "minimumSpaceAbovePullBar is now a property on SheetViewController")
+  public var minimumSpaceAbovePullBar: CoreGraphics.CGFloat
+  @available(*, unavailable, message: "gripSize is now a property on SheetViewController")
+  public var gripSize: CoreGraphics.CGSize
+  @available(*, unavailable, message: "gripColor is now a property on SheetViewController")
+  public var gripColor: UIKit.UIColor
+  @available(*, unavailable, message: "pullBarBackgroundColor is now a property on SheetViewController")
+  public var pullBarBackgroundColor: UIKit.UIColor
+  @available(*, unavailable, message: "cornerRadius is now a property on SheetViewController")
+  public var cornerRadius: CoreGraphics.CGFloat
+  public init()
+  public init(pullBarHeight: CoreGraphics.CGFloat? = nil, presentingViewCornerRadius: CoreGraphics.CGFloat? = nil, shouldExtendBackground: Swift.Bool? = nil, setIntrinsicHeightOnNavigationControllers: Swift.Bool? = nil, useFullScreenMode: Swift.Bool? = nil, shrinkPresentingViewController: Swift.Bool? = nil, useInlineMode: Swift.Bool? = nil, horizontalPadding: CoreGraphics.CGFloat? = nil, maxWidth: CoreGraphics.CGFloat? = nil)
+  @available(*, unavailable, message: "cornerRadius, minimumSpaceAbovePullBar, gripSize and gripColor are now properties on SheetViewController. Use them instead.")
+  public init(pullBarHeight: CoreGraphics.CGFloat? = nil, gripSize: CoreGraphics.CGSize? = nil, gripColor: UIKit.UIColor? = nil, cornerRadius: CoreGraphics.CGFloat? = nil, presentingViewCornerRadius: CoreGraphics.CGFloat? = nil, shouldExtendBackground: Swift.Bool? = nil, setIntrinsicHeightOnNavigationControllers: Swift.Bool? = nil, useFullScreenMode: Swift.Bool? = nil, shrinkPresentingViewController: Swift.Bool? = nil, useInlineMode: Swift.Bool? = nil, minimumSpaceAbovePullBar: CoreGraphics.CGFloat? = nil)
+}
+extension Swift.Int32 {
+  public static func random(lower: Swift.Int32 = min, upper: Swift.Int32 = max) -> Swift.Int32
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class MPinDialogueVC : UIKit.UIViewController {
+  public class homeVC {
+    public init()
+    @objc deinit
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension CustomerIOSFramework.MPinDialogueVC : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var sheetViewController: CustomerIOSFramework.SheetViewController? {
+    get
+  }
+}
+public typealias Index = Swift.Int
+public typealias Closure = () -> Swift.Void
+public typealias SelectionClosure = (CustomerIOSFramework.Index, Swift.String) -> Swift.Void
+public typealias MultiSelectionClosure = ([CustomerIOSFramework.Index], [Swift.String]) -> Swift.Void
+public typealias ConfigurationClosure = (CustomerIOSFramework.Index, Swift.String) -> Swift.String
+@objc public protocol AnchorView {
+  @objc var plainView: UIKit.UIView { get }
+}
+extension UIKit.UIView : CustomerIOSFramework.AnchorView {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var plainView: UIKit.UIView {
+    @objc get
+  }
+}
+extension UIKit.UIBarButtonItem : CustomerIOSFramework.AnchorView {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var plainView: UIKit.UIView {
+    @objc get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class TransactionDropDown : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) final public var forColorOrLocation: Swift.String
+  public enum forTheProductArea {
+    case Color
+    case Location
+    case manual
+    public static func == (a: CustomerIOSFramework.TransactionDropDown.forTheProductArea, b: CustomerIOSFramework.TransactionDropDown.forTheProductArea) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum DismissMode {
+    case onTap
+    case automatic
+    case manual
+    public static func == (a: CustomerIOSFramework.TransactionDropDown.DismissMode, b: CustomerIOSFramework.TransactionDropDown.DismissMode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Direction {
+    case any
+    case top
+    case bottom
+    public static func == (a: CustomerIOSFramework.TransactionDropDown.Direction, b: CustomerIOSFramework.TransactionDropDown.Direction) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) weak public static var VisibleDropDown: CustomerIOSFramework.TransactionDropDown?
+  @_Concurrency.MainActor(unsafe) weak final public var anchorView: CustomerIOSFramework.AnchorView? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var direction: CustomerIOSFramework.TransactionDropDown.Direction
+  @_Concurrency.MainActor(unsafe) final public var topOffset: CoreGraphics.CGPoint {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var bottomOffset: CoreGraphics.CGPoint {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var offsetFromWindowBottom: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var width: CoreGraphics.CGFloat? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var arrowIndicationX: CoreGraphics.CGFloat? {
+    get
+    set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var cellHeight: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var backgroundColor: UIKit.UIColor? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) final public var dimmedBackgroundColor: UIKit.UIColor {
+    get
+    set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var selectionBackgroundColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var separatorColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var cornerRadius: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public func setupCornerRadius(_ radius: CoreGraphics.CGFloat)
+  @available(iOS 11.0, *)
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public func setupMaskedCorners(_ cornerMask: QuartzCore.CACornerMask)
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var shadowColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var shadowOffset: CoreGraphics.CGSize {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var shadowOpacity: Swift.Float {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var shadowRadius: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var animationduration: Swift.Double
+  @_Concurrency.MainActor(unsafe) public static var animationEntranceOptions: UIKit.UIView.AnimationOptions
+  @_Concurrency.MainActor(unsafe) public static var animationExitOptions: UIKit.UIView.AnimationOptions
+  @_Concurrency.MainActor(unsafe) final public var animationEntranceOptions: UIKit.UIView.AnimationOptions
+  @_Concurrency.MainActor(unsafe) final public var animationExitOptions: UIKit.UIView.AnimationOptions
+  @_Concurrency.MainActor(unsafe) final public var downScaleTransform: CoreGraphics.CGAffineTransform {
+    get
+    set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var textColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var selectedTextColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var textFont: UIKit.UIFont {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) final public var cellNib: UIKit.UINib {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var dataSource: [Swift.String] {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var dataSourceProductAvailability: [Swift.String] {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var localizationKeysDataSource: [Swift.String] {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var cellConfiguration: CustomerIOSFramework.ConfigurationClosure? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var fromScreen: Swift.String?
+  @_Concurrency.MainActor(unsafe) final public var selectionAction: CustomerIOSFramework.SelectionClosure?
+  @_Concurrency.MainActor(unsafe) final public var multiSelectionAction: CustomerIOSFramework.MultiSelectionClosure?
+  @_Concurrency.MainActor(unsafe) final public var willShowAction: CustomerIOSFramework.Closure?
+  @_Concurrency.MainActor(unsafe) final public var cancelAction: CustomerIOSFramework.Closure?
+  @_Concurrency.MainActor(unsafe) final public var dismissMode: CustomerIOSFramework.TransactionDropDown.DismissMode {
+    get
+    set
+  }
+  @objc deinit
+  @objc convenience dynamic public init()
+  @_Concurrency.MainActor(unsafe) convenience public init(anchorView: CustomerIOSFramework.AnchorView, selectionAction: CustomerIOSFramework.SelectionClosure? = nil, dataSource: [Swift.String] = [], topOffset: CoreGraphics.CGPoint? = nil, bottomOffset: CoreGraphics.CGPoint? = nil, cellConfiguration: CustomerIOSFramework.ConfigurationClosure? = nil, cancelAction: CustomerIOSFramework.Closure? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+}
+extension CustomerIOSFramework.TransactionDropDown {
+  @_Concurrency.MainActor(unsafe) @objc override final public func updateConstraints()
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
+}
+extension CustomerIOSFramework.TransactionDropDown {
+  @objc(show) @_Concurrency.MainActor(unsafe) final public func objc_show() -> Foundation.NSDictionary
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) final public func show(onTopOf window: UIKit.UIWindow? = nil, beforeTransform transform: CoreGraphics.CGAffineTransform? = nil, anchorPoint: CoreGraphics.CGPoint? = nil) -> (canBeDisplayed: Swift.Bool, offscreenHeight: CoreGraphics.CGFloat?)
+  @objc override final public func accessibilityPerformEscape() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) final public func hide()
+}
+extension CustomerIOSFramework.TransactionDropDown {
+  @_Concurrency.MainActor(unsafe) final public func reloadAllComponents()
+  @_Concurrency.MainActor(unsafe) final public func selectRow(at index: CustomerIOSFramework.Index?, scrollPosition: UIKit.UITableView.ScrollPosition = .none)
+  @_Concurrency.MainActor(unsafe) final public func selectRows(at indices: Swift.Set<CustomerIOSFramework.Index>?)
+  @_Concurrency.MainActor(unsafe) final public func deselectRow(at index: CustomerIOSFramework.Index?)
+  @_Concurrency.MainActor(unsafe) final public func deselectRows(at indices: Swift.Set<CustomerIOSFramework.Index>?)
+  @_Concurrency.MainActor(unsafe) final public var indexForSelectedRow: CustomerIOSFramework.Index? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) final public var selectedItem: Swift.String? {
+    get
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public func selectRow(_ index: Swift.Int, scrollPosition: UIKit.UITableView.ScrollPosition = .none)
+  @objc @_Concurrency.MainActor(unsafe) final public func clearSelection()
+  @objc @_Concurrency.MainActor(unsafe) final public func deselectRow(_ index: Swift.Int)
+  @objc @_Concurrency.MainActor(unsafe) final public var indexPathForSelectedRow: Foundation.NSIndexPath? {
+    @objc get
+  }
+}
+extension CustomerIOSFramework.TransactionDropDown : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc final public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) @objc final public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc final public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc final public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+extension CustomerIOSFramework.TransactionDropDown {
+  @_Concurrency.MainActor(unsafe) @objc override final public func hitTest(_ point: CoreGraphics.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+}
+extension CustomerIOSFramework.TransactionDropDown {
+  @objc @_Concurrency.MainActor(unsafe) public static func startListeningToKeyboard()
+}
+@_hasMissingDesignatedInitializers public class Reachability {
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class SheetContentViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var childViewController: UIKit.UIViewController {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var contentBackgroundColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var cornerRadius: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var gripSize: CoreGraphics.CGSize {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var gripColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var pullBarBackgroundColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var treatPullBarAsClear: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var contentWrapperView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public var contentView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public var childContainerView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public var pullBarView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public var gripView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public init(childViewController: UIKit.UIViewController, options: CustomerIOSFramework.SheetOptions)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @objc deinit
+}
+extension CustomerIOSFramework.SheetContentViewController : UIKit.UINavigationControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationController(_ navigationController: UIKit.UINavigationController, willShow viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationController(_ navigationController: UIKit.UINavigationController, didShow viewController: UIKit.UIViewController, animated: Swift.Bool)
+}
+public enum Transaction : Swift.String {
+  case today
+  case Last30days
+  case last7days
+  case last15days
+  case smartWallets
+  case Last60days
+  case Last90days
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SheetSize : Swift.Equatable {
+  case intrinsic
+  case fixed(CoreGraphics.CGFloat)
+  case fullscreen
+  case percent(Swift.Float)
+  case marginFromTop(CoreGraphics.CGFloat)
+  public static func == (a: CustomerIOSFramework.SheetSize, b: CustomerIOSFramework.SheetSize) -> Swift.Bool
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class SheetTransition : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
+  @_Concurrency.MainActor(unsafe) @objc public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @_Concurrency.MainActor(unsafe) @objc public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class SheetViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var options: CustomerIOSFramework.SheetOptions {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static var autoAdjustToKeyboard: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var autoAdjustToKeyboard: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public static var allowPullingPastMaxHeight: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var allowPullingPastMaxHeight: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public static var allowPullingPastMinHeight: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var allowPullingPastMinHeight: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var sizes: [CustomerIOSFramework.SheetSize] {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var orderedSizes: [CustomerIOSFramework.SheetSize]
+  @_Concurrency.MainActor(unsafe) public var currentSize: CustomerIOSFramework.SheetSize {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var dismissOnPull: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var dismissOnOverlayTap: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var shouldRecognizePanGestureWithUIControls: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var childViewController: UIKit.UIViewController {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var childForStatusBarStyle: UIKit.UIViewController? {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) public static var hasBlurBackground: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var hasBlurBackground: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public static var minimumSpaceAbovePullBar: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var minimumSpaceAbovePullBar: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public static var overlayColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public var overlayColor: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public static var blurEffect: UIKit.UIBlurEffect
+  @_Concurrency.MainActor(unsafe) public var blurEffect: UIKit.UIBlurEffect {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public static var allowGestureThroughOverlay: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var allowGestureThroughOverlay: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public static var cornerRadius: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var cornerRadius: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public static var gripSize: CoreGraphics.CGSize
+  @_Concurrency.MainActor(unsafe) public var gripSize: CoreGraphics.CGSize {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public static var gripColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public var gripColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public static var pullBarBackgroundColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public var pullBarBackgroundColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public static var treatPullBarAsClear: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var treatPullBarAsClear: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var shouldDismiss: ((CustomerIOSFramework.SheetViewController) -> Swift.Bool)?
+  @_Concurrency.MainActor(unsafe) public var didDismiss: ((CustomerIOSFramework.SheetViewController) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var sizeChanged: ((CustomerIOSFramework.SheetViewController, CustomerIOSFramework.SheetSize, CoreGraphics.CGFloat) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var panGestureShouldBegin: ((UIKit.UIPanGestureRecognizer) -> Swift.Bool?)?
+  @_Concurrency.MainActor(unsafe) public var contentViewController: CustomerIOSFramework.SheetContentViewController {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var contentBackgroundColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public init(controller: UIKit.UIViewController, sizes: [CustomerIOSFramework.SheetSize] = [.intrinsic], options: CustomerIOSFramework.SheetOptions? = nil)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func handleScrollView(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) public func setSizes(_ sizes: [CustomerIOSFramework.SheetSize], animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func resize(to size: CustomerIOSFramework.SheetSize, duration: Foundation.TimeInterval = 0.2, options: UIKit.UIView.AnimationOptions = [.curveEaseOut], animated: Swift.Bool = true, complete: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func attemptDismiss(animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func updateIntrinsicHeight()
+  @_Concurrency.MainActor(unsafe) public func animateIn(to view: UIKit.UIView, in parent: UIKit.UIViewController, size: CustomerIOSFramework.SheetSize? = nil, duration: Foundation.TimeInterval = 0.3, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func animateIn(size: CustomerIOSFramework.SheetSize? = nil, duration: Foundation.TimeInterval = 0.3, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func animateOut(duration: Foundation.TimeInterval = 0.3, completion: (() -> Swift.Void)? = nil)
+  @objc deinit
+}
+extension CustomerIOSFramework.SheetViewController : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+extension CustomerIOSFramework.SheetViewController : UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) public class LoadingVC : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public var deviceId: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public var sdkAuth: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public var number: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public var mpin: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public var env: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public var priOrgId: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public var language: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public var templetType: Swift.String
+  public class mPinDialogueVC {
+    public init()
+    @objc deinit
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UIImage {
+  public class func gifImageWithData(_ data: Foundation.Data) -> UIKit.UIImage?
+  public class func gifImageWithURL(_ gifUrl: Swift.String) -> UIKit.UIImage?
+  public class func gifImageWithName(_ name: Swift.String) -> UIKit.UIImage?
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) open var compatibleSafeAreaInsets: UIKit.UIEdgeInsets {
+    get
+  }
+}
+extension QuartzCore.CALayer {
+  open var compatibleMaskedCorners: QuartzCore.CACornerMask {
+    get
+    set
+  }
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) open var compatibleAdditionalSafeAreaInsets: UIKit.UIEdgeInsets {
+    get
+    set
+  }
+}
+extension CustomerIOSFramework.RobotoScaledFontStyle : Swift.Equatable {}
+extension CustomerIOSFramework.RobotoScaledFontStyle : Swift.Hashable {}
+extension CustomerIOSFramework.RobotoTextType : Swift.Equatable {}
+extension CustomerIOSFramework.RobotoTextType : Swift.Hashable {}
+extension CustomerIOSFramework.Card91Type : Swift.Equatable {}
+extension CustomerIOSFramework.Card91Type : Swift.Hashable {}
+extension CustomerIOSFramework.ScaledFontStyle : Swift.Equatable {}
+extension CustomerIOSFramework.ScaledFontStyle : Swift.Hashable {}
+extension CustomerIOSFramework.SFProTextType : Swift.Equatable {}
+extension CustomerIOSFramework.SFProTextType : Swift.Hashable {}
+extension CustomerIOSFramework.TransactionDropDown.forTheProductArea : Swift.Equatable {}
+extension CustomerIOSFramework.TransactionDropDown.forTheProductArea : Swift.Hashable {}
+extension CustomerIOSFramework.TransactionDropDown.DismissMode : Swift.Equatable {}
+extension CustomerIOSFramework.TransactionDropDown.DismissMode : Swift.Hashable {}
+extension CustomerIOSFramework.TransactionDropDown.Direction : Swift.Equatable {}
+extension CustomerIOSFramework.TransactionDropDown.Direction : Swift.Hashable {}
+extension CustomerIOSFramework.Transaction : Swift.Equatable {}
+extension CustomerIOSFramework.Transaction : Swift.Hashable {}
+extension CustomerIOSFramework.Transaction : Swift.RawRepresentable {}
